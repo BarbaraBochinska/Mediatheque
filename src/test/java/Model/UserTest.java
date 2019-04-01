@@ -27,12 +27,24 @@ class UserTest {
     }
 
     @Test
-    void searchItems() {
+    void searchItemsByTitle() {
         Music item1 = new Music("Animals", "Pink Floyd", 75, 1970);
-        ArrayList<Music> musicList = warehouse.getMusic();
-        ArrayList<Music> newMusicList = new ArrayList<>();
+        ArrayList<Music> musicList = new ArrayList<>();
+        musicList.add(item1);
+        ArrayList<MediaItem> newMusicList = new ArrayList<>();
         newMusicList.add(item1);
         String title = "Animals";
         assertEquals(newMusicList, user.searchItems(musicList, title, "title"));
+    }
+
+    @Test
+    void searchItemsByAuthor() {
+        Music item1 = new Music("Animals", "Pink Floyd", 75, 1970);
+        ArrayList<Music> musicList = new ArrayList<>();
+        musicList.add(item1);
+        ArrayList<MediaItem> newMusicList = new ArrayList<>();
+        newMusicList.add(item1);
+        String author = "Pink Floyd";
+        assertEquals(newMusicList, user.searchItems(musicList, author, "author"));
     }
 }
