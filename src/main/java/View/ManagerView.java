@@ -34,6 +34,11 @@ public class ManagerView {
         System.out.println("1.Book\n2.Movie\n3.Music");
     }
 
+    public int getSecondOptionDelete() {
+        System.out.println("Please provide item No. to delete");
+        return getChosenOption();
+    }
+
     public String getItemInfo() {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();

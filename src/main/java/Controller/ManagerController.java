@@ -30,6 +30,9 @@ public class ManagerController {
                 chooseCategoryItemToAdd(chosenSecondOption);
                 break;
             case 2:
+                int itemToDelete = managerView.getSecondOptionDelete();
+                manager.removeItem(itemToDelete);
+                showManagerView();
                 break;
             default:
                 throw new IllegalArgumentException("No such category.");
