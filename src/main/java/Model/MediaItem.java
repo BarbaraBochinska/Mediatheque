@@ -17,4 +17,44 @@ public abstract class MediaItem {
         this.id = counter++;
         this.itemAvailability = ItemAvailability.AVAILABLE;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public int getReleaseDate() {
+        return releaseDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public ItemAvailability getItemAvailability() {
+        return itemAvailability;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setReleaseDate(int releaseDate) {
+        this.releaseDate = releaseDate;
+    }
 }
