@@ -5,6 +5,7 @@ import Model.User;
 import Model.Warehouse;
 import View.UserView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserController {
@@ -55,12 +56,29 @@ public class UserController {
             case 1:
                 userView.showSecondOptionSearch();
                 int searchBy = userView.getChosenOption();
+                searchItemByMetaData(searchBy, items);
                 break;
             case 2:
                 showUserMainMenu();
                 break;
             default:
                 throw new IllegalArgumentException("No such category.");
+        }
+    }
+
+    private void searchItemByMetaData(int searchBy, List<? extends MediaItem> items) {
+        switch (searchBy) {
+            case 1:
+                String title = userView.getUserTitle();
+                ArrayList<MediaItem> titleResult = user.searchItems(items, title, "title");
+                userView.showItems(titleResult);
+                break;
+            case 2:
+                String author = userView.getUserAuthor();
+                ArrayList<MediaItem> authorResult = user.searchItems(items, author, "author");
+                userView.showItems(authorResult);
+                break;
+
         }
     }
 }

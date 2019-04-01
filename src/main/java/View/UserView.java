@@ -40,4 +40,19 @@ public class UserView {
     public void showSecondOptionSearch() {
         System.out.println("1.Search by title\n2.Search by author");
     }
+
+    public String getUserTitle() {
+        System.out.println("Input title:");
+        return getItemInfo();
+    }
+    public String getUserAuthor() {
+        System.out.println("Input author name:");
+        return getItemInfo();
+    }
+
+    public String getItemInfo() {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine();
+        return input;
+    }
 }
