@@ -19,4 +19,24 @@ public class Warehouse {
     public ArrayList<Music> getMusic() {
         return music;
     }
+
+    public void saveItem(MediaItem item) {
+        if (item instanceof Book) {
+            books.add((Book)item);
+        }
+        else if (item instanceof Movie) {
+            movies.add((Movie)item);
+        }
+        else {
+            music.add((Music) item);
+        }
+    }
+
+    public ArrayList<MediaItem> getAllItems() {
+        ArrayList<MediaItem> allItems = new ArrayList<>();
+        allItems.addAll(books);
+        allItems.addAll(movies);
+        allItems.addAll(music);
+        return allItems;
+    }
 }

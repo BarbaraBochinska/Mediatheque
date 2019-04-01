@@ -18,6 +18,10 @@ public abstract class MediaItem {
         this.itemAvailability = ItemAvailability.AVAILABLE;
     }
 
+    public String toString() {
+        return " | " + title + " | " + author + " | " + length + " | " + releaseDate + " | " + itemAvailability + " | ";
+    }
+
     public String getTitle() {
         return title;
     }
