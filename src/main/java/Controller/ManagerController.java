@@ -2,12 +2,10 @@ package Controller;
 
 import Model.*;
 import View.ManagerView;
-import View.PrivilageMenuView;
 
 public class ManagerController {
 
     private Warehouse warehouse;
-    PrivilageMenuView privilageMenuView = new PrivilageMenuView();
     private ManagerView managerView = new ManagerView();
     private Manager manager;
 

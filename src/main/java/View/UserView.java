@@ -50,7 +50,7 @@ public class UserView {
         return getItemInfo();
     }
 
-    public String getItemInfo() {
+    private String getItemInfo() {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         return input;
