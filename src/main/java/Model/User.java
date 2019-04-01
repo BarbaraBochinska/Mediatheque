@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
 
@@ -12,7 +13,26 @@ public class User {
         this.warehouse = warehouse;
     }
 
-    public void searchItem(MediaItem item) {
+    public ArrayList<MediaItem> searchItems(List<? extends MediaItem> items, String metaData, String field) {
+        ArrayList<MediaItem> searchedItems = new ArrayList<>();
+        switch (field) {
+            case "title":
+                for (int i = 0; i < items.size() ; i++) {
+                    if (items.get(i).getTitle().equals(metaData)) {
+                        searchedItems.add(items.get(i));
+                    }
+                }
+                break;
+            case "author":
+                for (int i = 0; i < items.size() ; i++) {
+                    if (items.get(i).getAuthor().equals(metaData)) {
+                        searchedItems.add(items.get(i));
+                    }
+                }
+                break;
+
+        }
+        return searchedItems;
     }
 
     public void rentItem(MediaItem item) {
