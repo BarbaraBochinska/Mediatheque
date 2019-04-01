@@ -9,5 +9,12 @@ public abstract class MediaItem {
     private static int counter = 0;
     private ItemAvailability itemAvailability;
 
-
+    public MediaItem(String title, String author, int length, int releaseDate) {
+        this.author = author;
+        this.length = length;
+        this.releaseDate = releaseDate;
+        this.title = title;
+        this.id = counter++;
+        this.itemAvailability = ItemAvailability.AVAILABLE;
+    }
 }
